@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -30,6 +31,7 @@ function SignUp() {
         setError(true);
         return;
       }
+      navigate("/");
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -69,7 +71,7 @@ function SignUp() {
           {loading ? "Loading..." : "Sign Up"}
         </button>
       </form>
-      {/* Sign Up with Google */}
+      {/* Sign In */}
       <div className="flex gap-2 mt-5">
         <p>Have an account?</p>
         <Link to="/sign-in">
