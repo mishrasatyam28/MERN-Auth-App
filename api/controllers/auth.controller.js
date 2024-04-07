@@ -40,7 +40,7 @@ export const signin = async (req, res, next) => {
     if (!token) {
       return next(errorHandler(404, "Error while generating token"));
     }
-    return res
+    res
       .status(200)
       .cookie("access_token", token, { httpOnly: true, expires: expiryDate })
       .json(rest);
