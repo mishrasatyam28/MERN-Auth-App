@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePicture: {
+      type: String,
+      default:
+        "https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png",
+    },
   },
   { timestamps: true }
 );
