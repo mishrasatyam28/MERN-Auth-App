@@ -51,7 +51,7 @@ function SignIn() {
     } catch (error) {
       // setLoading(false);
       // setError(true);
-      dispatch(signInFailure("Hello"));
+      dispatch(signInFailure());
     }
   };
   return (
